@@ -1,4 +1,5 @@
 #!/bin/python
-import MonitorLinux
+from MonitorLinux import MonitorLinux
 
-MonitorLinux.monitor('mysql')
+mysql=MonitorLinux('mysql')
+mysql.monitor()
