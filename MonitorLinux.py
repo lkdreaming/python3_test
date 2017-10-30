@@ -5,7 +5,7 @@ class MonitorLinux(object):
     def __init__(self,pro):
         self.pro = pro
     def monitor(self):
-        res = os.popen('ps -ef | grep '+ self.pro +' | grep -v grep | wc -l','r').readlines()
+        res = os.popen('ps -ef | grep '+ self.pro +' | grep -v grep | grep -v python | wc -l','r').readlines()
         res = ''.join(res).strip()
         print(res)
         logging.basicConfig(filename='/var/log/' + self.pro + '.log', filemode="w",
