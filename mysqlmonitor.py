@@ -1,3 +1,4 @@
-#!/bin/env python3
+#!/bin/python
 import MonitorLinux
-mysqlmonitor=MonitorLinux('mysql')
+
+MonitorLinux.monitor('mysql')
