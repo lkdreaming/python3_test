@@ -8,7 +8,7 @@ class MonitorLinux(object):
         res=os.popen('ps -ef | grep '+ self.pro +' | grep -v grep | wc -l','r').readlines()
         res=''.join(res).strip()
         if int(res) <= 0:
-            logging.basicConfig(filename='example.log', filemode="w", format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+            logging.basicConfig(filename='/var/log/'+ self.pro +'.log', filemode="w", format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
             logging.debug(self.pro+"has gone,now restarting it!")
             #print(self.pro+"has gone,now restarting it!")
             try:
