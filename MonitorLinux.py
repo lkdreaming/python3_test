@@ -11,8 +11,8 @@ class MonitorLinux(object):
         logging.basicConfig(filename='/var/log/' + self.pro + '.log', filemode="a",
                             format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
         if int(res) <= 0:
-            logging.debug(self.pro+"has gone,now restarting it!")
-            print(self.pro+"has gone,now restarting it!")
+            logging.debug(self.pro+" has gone,now restarting it!")
+            print(self.pro+" has gone,now restarting it!")
             try:
                 os.system('/etc/init.d/'+ self.pro + ' start')
                 logging.debug(self.pro + " is started")
