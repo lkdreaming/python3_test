@@ -15,7 +15,6 @@ class MonitorLinux(object):
                 os.system('/etc/init.d/'+ self.pro + 'start')
                 logging.debug(self.pro + "is started")
             except OSError:
-#                logging.debug(self.pro + "启动失败")
                 logging.debug(self.pro + "startup failed")
             else:
                 res = os.popen('ps -ef | grep ' + self.pro + ' | grep -v grep | wc -l', 'r').readlines()
