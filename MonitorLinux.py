@@ -1,7 +1,7 @@
 #!/bin/python
 import os
 import logging
-class Monitor(object):
+class MonitorLinux(object):
     def __init__(self,pro):
         self.pro = pro
     def monitor(self):
