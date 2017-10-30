@@ -7,8 +7,9 @@ class MonitorLinux(object):
     def monitor(self):
         res=os.popen('ps -ef | grep '+ self.pro +' | grep -v grep | wc -l','r').readlines()
         res=''.join(res).strip()
+        logging.basicConfig(filename='/var/log/' + self.pro + '.log', filemode="w",
+                            format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
         if int(res) <= 0:
-            logging.basicConfig(filename='/var/log/'+ self.pro +'.log', filemode="w", format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
             logging.debug(self.pro+"has gone,now restarting it!")
             #print(self.pro+"has gone,now restarting it!")
             try:
@@ -23,6 +24,8 @@ class MonitorLinux(object):
                     logging.debug(self.pro + "startup failed")
                 else:
                     logging.debug(self.pro + "startup successfully")
+        else:
+            logging.debug(self.pro + "is running!")
 
 
 
