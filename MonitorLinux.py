@@ -22,7 +22,7 @@ class MonitorLinux(object):
                 if int(res) <= 0:
                     logging.debug(self.pro + "启动失败")
                 else:
-                    logging.debug(self.pro + "启动失败")
+                    logging.debug(self.pro + "启动成功")
 
 
 
