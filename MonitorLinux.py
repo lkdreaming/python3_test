@@ -21,7 +21,7 @@ class MonitorLinux(object):
                 logging.debug(self.pro + " startup failed")
                 print(self.pro + " startup failed")
             else:
-                res = os.popen('ps -ef | grep ' + self.pro + ' | grep -v grep | wc -l', 'r').readlines()
+                res = os.popen('ps -ef | grep ' + self.pro + ' | grep -v grep | grep -v python | wc -l', 'r').readlines()
                 res = ''.join(res).strip()
                 if int(res) <= 0:
                     logging.debug(self.pro + " startup failed")
