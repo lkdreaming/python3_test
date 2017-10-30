@@ -14,7 +14,7 @@ class MonitorLinux(object):
             logging.debug(self.pro+"has gone,now restarting it!")
             print(self.pro+"has gone,now restarting it!")
             try:
-                os.system('/etc/init.d/'+ self.pro + 'start')
+                os.system('/etc/init.d/'+ self.pro + ' start')
                 logging.debug(self.pro + " is started")
                 print(self.pro + " is started")
             except OSError:
